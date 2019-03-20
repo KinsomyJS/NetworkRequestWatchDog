@@ -24,7 +24,7 @@ android {
 
 }
 ext {
-    NEXUS_DEPLOY_VERSION = "1.0.0.2-local"
+    NEXUS_DEPLOY_VERSION = "1.0.0.5-local"
     NEXUS_DEPLOY_ARTIFACT_ID = "watcher"
     NEXUS_DEPLOY_GROUP_ID = "com.shanbay.biz"
     NEXUS_DEPLOY_DESCRIPTION = "network watcher"

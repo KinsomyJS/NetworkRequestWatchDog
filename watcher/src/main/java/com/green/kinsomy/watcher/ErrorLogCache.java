@@ -24,6 +24,7 @@ public class ErrorLogCache {
 	}
 
 	public void addError(ErrorBean errorBean) {
+		errorBean.time = DataUtils.getNowTime();
 		executor.execute(new ErrorSubmitter(errorBean));
 	}
 
@@ -70,8 +71,9 @@ public class ErrorLogCache {
 
 			boolean retVal = false;
 
-			try (FileWriter writer = new FileWriter(filePath)) {
+			try (FileWriter writer = new FileWriter(filePath, true)) {
 				writer.write(content);
+				writer.write("\n");
 				retVal = true;
 			} catch (Exception e) {
 				e.printStackTrace();
